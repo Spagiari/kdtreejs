@@ -1,4 +1,4 @@
-# Red-Black BST
+# k-dimensional tree
 Implementation of [k-dimensional tree](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.160.335&rep=rep1&type=pdf) with no dependencies for multi purpose. Common uses are: search in multisemensional spaces (range searches and nearest neighbor searches).
 
 # Introduction

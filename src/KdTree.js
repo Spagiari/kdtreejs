@@ -20,13 +20,6 @@ const {
   setK,
 } = require('./helper/kdTree');
 
-function check(p) {
-  if (!(p instanceof Point) || p.D !== this.K)
-    throw new Error(
-      `first argument to put() is not Point of ${this.K} dimentions`
-    );
-}
-
 /**
  * Class representing a k-dimensional tree.
  */
@@ -42,6 +35,13 @@ class KdTree {
     setK(numberOfDimensions);
   }
 
+  check(p) {
+    if (!(p instanceof Point) || p.D !== this.K)
+      throw new Error(
+        `first argument to put() is not Point of ${this.K} dimentions`
+      );
+  }
+
   /**
    * Inserts the specified point p into the k dimensional tree.
    *
@@ -49,7 +49,7 @@ class KdTree {
    * @throws error if point wrong number of dimensions
    */
   put(p) {
-    check(p);
+    this.check(p);
     if (!this.root) this.root = new Node(p);
     else put(p, this.root, 0);
     this.N++;
@@ -65,7 +65,7 @@ class KdTree {
   contains(p) {
     // does the set contain point p?
     if (!p) throw new Error('Null point on Contains');
-    check(p);
+    this.check(p);
 
     return contains(p, this.root, 0);
   }

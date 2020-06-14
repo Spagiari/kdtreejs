@@ -1,4 +1,4 @@
-const Point = require('../../algorithms/Point');
+const Point = require('../../Point');
 
 describe('Commom uses', () => {
   it('Create point', () => {

@@ -1,5 +1,5 @@
-const Rect = require('../../algorithms/Rect');
-const Point = require('../../algorithms/Point');
+const Rect = require('../../Rect');
+const Point = require('../../Point');
 
 describe('Create', () => {
   it('Create Rect success', () => {
