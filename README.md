@@ -13,32 +13,60 @@ $ npm i red-black-bst
 ```
 
 ```javascript
-const KdTree = require('kdtreejs');
+const {KdTree, Point, Rect} = require('kdtreejs');
 
 // makes a KdTree for two dimensions
-const kdTree = new KdTree(2);
+const kdt = new KdTree(2);
 
-bst.put('my key', {mydata: 'is this'})
+kdt.insert(new Point([0.5, 0.3]));
+kdt.insert(new Point([0.4, 0.01]));
 
-console.log(bst.get('my key'))
+console.log(kdt.nearest(new Point([0.01, 2])));
+console.log(kdt.range(new Rect(new Point([0.01, 0.1], new Point([0.5, 0.35])))));
+console.log(kdt.pointsInRadius(new Point([0.01, 2]), 0.075));
 ```
 
 ## API
 
-#### Insert point
-
-#### Check if point exists
-
-#### Tree size
-
-#### Check if tree is empty
-
-#### Get all points
-
-#### Nearest neibhor
-
+#### insert
+Create point in tree
+```javascript
+kdt.insert(new Point([0.5, 0.3]));
+```
+#### contains 
+Check if point p exists in k-dimention tree
+```javascript
+kdt.contains(new Point([0.5, 0.3]));
+```
+#### size 
+Get numbet of points in k-dimentional tree
+```javascript
+kdt.contains();
+```
+#### isEmpty
+Check if k-dimention tree is empty
+```javascript
+kdt.isEmpty();
+```
+#### nodes
+Get all points in k-dimentional tree
+```javascript
+kdt.nodes();
+```
+#### nearest
+Get nearest neighbor point of p point
+```javascript
+kdt.nearest(new Point([0.01, 2]));
+```
 #### Range searchs
 
-###### Query points in a retangle
-
-###### Query points in a radius
+###### range
+Query points inside rectangle
+```javascript
+kdt.range(new Rect(new Point([0.01, 0.1], new Point([0.5, 0.35]))));
+```
+###### pointsInRadius
+Query all points inside radius from a p point
+```javascript
+kdt.pointsInRadius(new Point([0.01, 2]), 0.075)
+```
