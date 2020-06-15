@@ -9,11 +9,11 @@ This structure allows for very useful kinds of operations with an interesting co
 ## Usage
 
 ```bash
-$ npm i red-black-bst
+$ npm i k-dimensional_tree
 ```
 
 ```javascript
-const {KdTree, Point, Rect} = require('kdtreejs');
+const {KdTree, Point, Rect} = require('k-dimensional_tree');
 
 // makes a KdTree for two dimensions
 const kdt = new KdTree(2);
@@ -22,8 +22,9 @@ kdt.insert(new Point([0.5, 0.3]));
 kdt.insert(new Point([0.4, 0.01]));
 
 console.log(kdt.nearest(new Point([0.01, 2])));
-console.log(kdt.range(new Rect(new Point([0.01, 0.1], new Point([0.5, 0.35])))));
+console.log(kdt.range(new Rect(new Point([0.01, 0.1]), new Point([0.5, 0.35]))));
 console.log(kdt.pointsInRadius(new Point([0.01, 2]), 0.075));
+
 ```
 
 ## API

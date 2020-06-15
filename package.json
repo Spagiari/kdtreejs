@@ -1,5 +1,5 @@
 {
-  "name": "kdtreejs",
+  "name": "k-dimensional_tree",
   "version": "0.0.1",
   "description": "kdtree data structure",
   "homepage": "https://github.com/Spagiari/kdtreejs#readme",
@@ -12,10 +12,13 @@
     "test": "jest"
   },
   "keywords": [
-    "2dtree",
     "kdtree",
+    "cluster",
+    "geospatial",
     "range searches",
-    "nearest neighbor searches"
+    "nearest neighbor searches",
+    "2D",
+    "3D"
   ],
   "author": "Eduardo Spagiari",
   "license": "ISC",
